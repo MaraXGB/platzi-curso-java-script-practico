@@ -9,6 +9,10 @@ const h1 = document.querySelector("h1");
 const resultado = document.querySelector("#result");
 const numero1 = document.querySelector("#calculo1");
 const numero2 = document.querySelector("#calculo2");
+const btnCalc = document.querySelector('·btnCalcular');
+const form = document.querySelector('#form');
+
+form.addEventListener('submit',Calcular);
 // console.log(input.value);
 // console.log({
 //     h1, p, parrafoClass, parrafoId, input
@@ -28,7 +32,9 @@ const img = document.createElement('img');
 img.setAttribute('src', 'https://t3.ftcdn.net/jpg/05/85/86/44/360_F_585864419_kgIYUcDQ0yiLOCo1aRjeu7kRxndcoitz.jpg');
 h1.append(img);
 
-function Calcular(){
+function Calcular(event){
+    console.log({event});
+    event.preventDefault();
     console.log(parseInt(numero1.value) + parseInt(numero2.value));
     const sumaInput = parseInt(numero1.value) + parseInt(numero2.value);
     resultado.innerHTML = "Resultado:  " + sumaInput;
